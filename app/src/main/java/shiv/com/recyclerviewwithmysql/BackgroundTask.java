@@ -73,7 +73,7 @@ public class BackgroundTask extends AsyncTask<Void,Fruit,Void> {
             {
                 JSONObject JO=jsonArray.getJSONObject(count);
                 count++;
-                Fruit fruit=new Fruit(JO.getString("name"),JO.getInt("calories"),JO.getDouble("fat"));
+                Fruit fruit=new Fruit(JO.getString("0"),JO.getInt("calories"),JO.getDouble("fat"));
                 publishProgress(fruit);
             }
             Log.d("JSON STRING",json_string);
