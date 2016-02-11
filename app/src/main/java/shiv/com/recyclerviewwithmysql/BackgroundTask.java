@@ -42,12 +42,7 @@ public class BackgroundTask extends AsyncTask<Void,Fruit,Void> {
     String json_string="http://192.168.1.4/collegeinfo/get_details.php";
     @Override
     protected void onPreExecute() {
-        recyclerView=(RecyclerView)activity.findViewById(R.id.recyclerView);
-        layoutManager=new LinearLayoutManager(ctx);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        adapter=new RecyclerAdapter(arrayList);
-        recyclerView.setAdapter(adapter);
+        
 
     }
     @Override
@@ -103,5 +98,11 @@ arrayList.add(values[0]);
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        recyclerView=(RecyclerView)activity.findViewById(R.id.recyclerView);
+        layoutManager=new LinearLayoutManager(ctx);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        adapter=new RecyclerAdapter(arrayList);
+        recyclerView.setAdapter(adapter);
     }
 }
